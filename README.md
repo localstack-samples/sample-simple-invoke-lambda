@@ -4,6 +4,7 @@ Create node and python lambda from simple make targets using AWS CLI and invoke 
 
 # Setup 
 After you've cloned this repo.
+You can either use a LocalStack AWS_PROFILE for credentials, or use `awslocal`. Setup options are directly below.
 
 ## With LocalStack Profile
 1. Setup an AWS_PROFILE for LocalStack
