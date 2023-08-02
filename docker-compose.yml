@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  localstack:
+#    image: localstack/localstack-pro:latest
+    image: localstack/localstack:latest
+    container_name: localstack
+    ports:
+      - "4566:4566"  # Port for AWS services
+    environment:
+      - DEBUG=1
+      - SERVICES=lambda, s3, logs  # Only start the Lambda service
+      - LAMBDA_EXECUTOR=docker-reuse  # To use Docker for Lambda execution
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - PROVIDER_OVERRIDE_LAMBDA=asf
+      - LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY-}
+    volumes:
+      - ./lambda_function:/var/task  # Mount the lambda_function directory to /var/task in the container
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount the Docker socket into the container
+    networks:
+      - localstack_network
+
+networks:
+  localstack_network:
