@@ -6,7 +6,7 @@ Create node and python lambda from simple make targets using AWS CLI and invoke 
 After you've cloned this repo.
 You can either use a LocalStack AWS_PROFILE for credentials, or use `awslocal`. Setup options are directly below.
 
-## With LocalStack Profile
+### With LocalStack Profile
 1. Setup an AWS_PROFILE for LocalStack
 
 #### Add this to your `~/.aws/config` file
@@ -27,7 +27,7 @@ aws_secret_access_key=test
 ```
 
 
-## With awslocal wrapper
+### With awslocal wrapper
 1. Create a Python venv and activate it
 
       ```bash
@@ -36,8 +36,17 @@ aws_secret_access_key=test
       ```
 2. Change makefile to point at awslocal
 ```makefile
-#AWS_CLI=AWSPROFILE=localstack aws
+#AWS_CLI=AWS_PROFILE=localstack aws
+#AWS_CLI=AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url http://localhost:4566 --region us-east-1
 AWS_CLI=awslocal
+```
+
+### With AWS CLI
+Change makefile to point at aws CLI. Must be AWS CLI v2.
+```makefile
+#AWS_CLI=AWS_PROFILE=localstack aws
+AWS_CLI=AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url http://localhost:4566 --region us-east-1
+#AWS_CLI=awslocal
 ```
 
 ## Run LocalStack

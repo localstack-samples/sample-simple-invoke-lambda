@@ -1,4 +1,5 @@
 AWS_CLI=AWS_PROFILE=localstack aws
+#AWS_CLI=AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url http://localhost:4566 --region us-east-1
 #AWS_CLI=awslocal
 
 setup-venv:
