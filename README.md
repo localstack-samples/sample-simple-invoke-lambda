@@ -1,5 +1,14 @@
-# Simple Lambda Repo AWS CLI Sample
-Create node and python lambda from simple make targets using AWS CLI and invoke them
+# Simple AWS CLI Sample with Lambda
+Use three different methods via the CLI to create and invoke a Lambda. 
+Create node and python lambda from simple make targets.
+
+`makefile` uses these three different ways to configure the AWS CLI. Uncomment the one you want to use. 
+```makefile
+#AWS_CLI=AWS_PROFILE=localstack aws
+#AWS_CLI=AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url http://localhost:4566 --region us-east-1
+#AWS_CLI=awslocal
+```
+!["Design"](./docs/img/solution-diags.drawio.png)
 
 
 # Setup 
