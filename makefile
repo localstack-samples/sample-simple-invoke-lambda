@@ -1,4 +1,4 @@
-AWS_CLI=AWSPROFILE=localstack aws
+AWS_CLI=AWS_PROFILE=localstack aws
 #AWS_CLI=awslocal
 
 setup-venv:

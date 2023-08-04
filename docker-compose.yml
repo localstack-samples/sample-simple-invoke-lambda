@@ -6,6 +6,7 @@ services:
     container_name: localstack
     ports:
       - "4566:4566"  # Port for AWS services
+      - "443:443"
     environment:
       - DEBUG=1
       - SERVICES=lambda, s3, logs  # Only start the Lambda service
